@@ -1,19 +1,49 @@
-import React from 'react'
-import UserPolicy from '../Policy/UserPolicy'
-import { Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react'
+import React, {useState, useEffect} from 'react'
 
-const SignIn = () => {
+const SignIn = ({ setToken }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const addToken = async (e) => {
+    e.preventDefault();
+    const token = await fetchToken({
+      "username": username, "password": password, "type": "USER_PASSWORD_AUTH"
+    })
+    setToken(token.access_token);
+  }
+
+  const fetchToken = async (credentials) => {
+    const data = await fetch('https://api.bybits.co.uk/auth/token', {
+      method: 'POST',
+      headers: {
+        "Content-type": 'application/json',
+        'environment': "mock",
+      },      
+      body: JSON.stringify(credentials),
+    })
+    return data.json()
+  }
 
   return (
     <div className='signin'>
-      <form>
-        <label for ='username'>User Name:</label>
-          <input type='text' name='username' paceholder='Enter username...'></input> 
-        <label for ='password'>Password:</label>
-          <input type='text' name='password' paceholder='Enter password...'></input> 
+      <form onSubmit={addToken}>
+        <label>User Name:</label>
+          <input 
+            type='text'
+            onChange={(e) => setUsername(e.target.value)}
+            name='username' 
+            paceholder='Enter username...'>
+          </input> 
+        <label>Password:</label>
+          <input
+            type='text'
+            onChange={(e) => setPassword(e.target.value)}
+            name='password'
+            paceholder='Enter password...'>
+          </input> 
+        <button type ='submit'>Sign In</button>
       </form>
-      <Link to='/policy' ><button color ='purple'>Sign In</button></Link>
+      
     </div>
   )
 }
