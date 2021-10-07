@@ -1,7 +1,10 @@
 import React from 'react'
+import UserPolicy from '../Policy/UserPolicy'
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react'
 
-function SignIn() {
-  
+const SignIn = () => {
+
   return (
     <div className='signin'>
       <form>
@@ -10,6 +13,7 @@ function SignIn() {
         <label for ='password'>Password:</label>
           <input type='text' name='password' paceholder='Enter password...'></input> 
       </form>
+      <Link to='/policy' ><button color ='purple'>Sign In</button></Link>
     </div>
   )
 }
