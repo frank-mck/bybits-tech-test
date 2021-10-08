@@ -9,8 +9,8 @@ const App = () => {
 
   const history = useHistory();
 
-  if (!token) {
-    history.push('/')
+  if (!localStorage.getItem('token')) {
+    history.push('/');
   }
 
   return (

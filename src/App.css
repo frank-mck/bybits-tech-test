@@ -16,15 +16,15 @@ body {
 }
 
 .policy-form {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.151), 2px 4px 8px rgba(0, 0, 0, 0.212);
   background-color: rgba(63, 139, 116, 0.363);
-  height: 580px;
-  width: 400px;
+  height: 500px;
+  width: 380px;
 }
 
 .policy-details {
@@ -38,14 +38,14 @@ body {
 }
 
 .signin-form-container {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.151), 2px 4px 8px rgba(0, 0, 0, 0.212);
   background-color: rgba(63, 139, 116, 0.363);
-  height: 580px;
-  width: 400px;
+  height: 500px;
+  width: 380px;
 }
 
 .signin-title {
@@ -98,9 +98,10 @@ body {
 
 .line-break {
   background-color: rgba(0, 0, 0, 0.705);
-  width: 360px;
+  width: 340px;
   height: 4px;
   border: none;
+  margin: 0 auto;
   border-radius: 5px;
   margin-bottom: 2.5rem;
 }
