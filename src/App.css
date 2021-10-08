@@ -12,6 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: rgb(219, 219, 219);
 }
 
 .policy-form {
@@ -21,7 +22,7 @@ body {
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.151), 2px 4px 8px rgba(0, 0, 0, 0.212);
-  background-color: rgba(63, 139, 116, 0.219);
+  background-color: rgba(63, 139, 116, 0.363);
   height: 580px;
   width: 400px;
 }
@@ -42,7 +43,7 @@ body {
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.151), 2px 4px 8px rgba(0, 0, 0, 0.212);
-  background-color: rgba(63, 139, 116, 0.219);
+  background-color: rgba(63, 139, 116, 0.363);
   height: 580px;
   width: 400px;
 }
