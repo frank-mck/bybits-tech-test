@@ -7,7 +7,6 @@ const getPolicy = async (token) => {
       'Content-type': 'application/json'
     }
   })
-
   return policy.json()
 }
 
