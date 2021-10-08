@@ -5,7 +5,7 @@ import UserPolicy from './components/pages/Policy/UserPolicy';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState('');
 
   return (
     <Router>
