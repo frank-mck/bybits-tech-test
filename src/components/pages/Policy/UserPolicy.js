@@ -5,7 +5,7 @@ function UserPolicy({ token }) {
   return (
     <div>
       <h1>User Policy</h1>
-      this is my token: {token}
+      this is my token: {token || localStorage.getItem('token')}
     </div>
   )
 }

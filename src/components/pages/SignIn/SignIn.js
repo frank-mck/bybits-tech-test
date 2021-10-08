@@ -13,6 +13,7 @@ const SignIn = ({ setToken }) => {
     const token = await getToken({
       "username": username, "password": password, "type": "USER_PASSWORD_AUTH"
     })
+    localStorage.setItem('token', token.access_token);
     setToken(token.access_token);
     history.push('/policy')
   }
