@@ -1,47 +1,40 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+const getToken = require('../../../api/GetToken').default;
 
 const SignIn = ({ setToken }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const history = useHistory();
+
   const addToken = async (e) => {
     e.preventDefault();
-    const token = await fetchToken({
+    const token = await getToken({
       "username": username, "password": password, "type": "USER_PASSWORD_AUTH"
     })
     setToken(token.access_token);
-  }
-
-  const fetchToken = async (credentials) => {
-    const data = await fetch('https://api.bybits.co.uk/auth/token', {
-      method: 'POST',
-      headers: {
-        "Content-type": 'application/json',
-        'environment': "mock",
-      },      
-      body: JSON.stringify(credentials),
-    })
-    return data.json()
+    history.push('/policy')
   }
 
   return (
-    <div className='signin'>
+    <div className='signin-form'>
       <form onSubmit={addToken}>
         <label>User Name:</label>
-          <input 
-            type='text'
-            onChange={(e) => setUsername(e.target.value)}
-            name='username' 
-            paceholder='Enter username...'>
-          </input> 
+        <input 
+          type='text'
+          onChange={(e) => setUsername(e.target.value)}
+          name='username' 
+          paceholder='Enter username...'>
+        </input> 
         <label>Password:</label>
-          <input
-            type='text'
-            onChange={(e) => setPassword(e.target.value)}
-            name='password'
-            paceholder='Enter password...'>
-          </input> 
-        <button type ='submit'>Sign In</button>
+        <input
+          type='text'
+          onChange={(e) => setPassword(e.target.value)}
+          name='password'
+          paceholder='Enter password...'>
+        </input> 
+        <button type='submit'>Sign In</button>
       </form>
       
     </div>
