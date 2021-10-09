@@ -46,5 +46,5 @@ This will open up a new browser at [localhost:3000](http://localhost:3000/)
 
 To run tests
 ```
-npm tests
+npm test
 ```
