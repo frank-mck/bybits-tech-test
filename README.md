@@ -19,7 +19,7 @@ Once the user has been authenticated, i decided to set the `access_token` in the
 
 I was playing with the idea of the user being redirected to the `signin` page if there was a refresh but decided against it as for a better user experience.
 
-I have realised whilst I am writing this that I could have kept the token updated in the `signin` component by adding a `useEffect` hook like I did in the `policy` component. This way I would'nt have had to use the `localStorage`.
+I have realised whilst I am writing this that I could have kept the token updated in the `signin` component by adding a `useEffect` hook like I did in the `policy` component. This way I wouldn't have had to use the `localStorage`.
 
 ## Time of completion
 
@@ -42,7 +42,7 @@ To run the application
 ```
 npm start
 ```
-This will open up a new browser at localhost:3000
+This will open up a new browser at [localhost:3000](http://localhost:3000/)
 
 To run tests
 ```
