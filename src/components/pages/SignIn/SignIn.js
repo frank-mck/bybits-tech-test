@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-const getToken = require('../../../api/getToken').default;
+import { getToken } from '../../../utils/getToken'
 
 const SignIn = ({ setToken }) => {
   const [username, setUsername] = useState('');
@@ -13,8 +13,8 @@ const SignIn = ({ setToken }) => {
     const token = await getToken({
       "username": username, "password": password, "type": "USER_PASSWORD_AUTH"
     })
-    localStorage.setItem('token', token.access_token)
-    setToken(token.access_token)
+    localStorage.setItem('token', token)
+    setToken(token)
     history.push('/policy')
   }
 

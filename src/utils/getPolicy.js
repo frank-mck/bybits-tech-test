@@ -7,7 +7,11 @@ const getPolicy = async (token) => {
       'Content-type': 'application/json'
     }
   })
-  return policy.json()
+  try {
+    return policy.json()
+  } catch (err) {
+    console.log(err)
+  }
 }
 
-export default getPolicy
+export { getPolicy }

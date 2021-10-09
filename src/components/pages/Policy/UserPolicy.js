@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-const getPolicy = require('../../../api/getPolicy').default;
+import { getPolicy } from '../../../utils/getPolicy'
 
 const UserPolicy = ({ token }) => {
   const [policy, setPolicy] = useState([]);

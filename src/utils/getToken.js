@@ -7,7 +7,12 @@ const getToken = async (credentials) => {
     },
     body: JSON.stringify(credentials),
   })
-  return data.json()
+  try {
+    const result = data.json();
+    return result.access_token;
+  } catch (err) {
+    console.log(err)
+  }
 }
 
-export default getToken
+export { getToken }
