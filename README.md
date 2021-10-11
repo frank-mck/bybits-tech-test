@@ -40,6 +40,7 @@ cd bybits-tech-test
 ```
 To run the application
 ```
+npm install
 npm start
 ```
 This will open up a new browser at [localhost:3000](http://localhost:3000/)
